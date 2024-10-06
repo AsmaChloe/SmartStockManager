@@ -1,7 +1,8 @@
-FROM python:3.12-alpine
+FROM python:3.8-alpine
 
 WORKDIR /app
-COPY requirements.txt ./
+COPY requirements.txt ./requirements.txt
+COPY producer.py ./producer.py
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .

@@ -5,8 +5,6 @@ services:
     image: wurstmeister/zookeeper:latest
     ports:
       - "2181:2181"
-    networks:
-      - kafka-net
 
   kafka:
     image: wurstmeister/kafka:latest
@@ -23,8 +21,6 @@ services:
       KAFKA_CREATE_TOPICS: "order-sensor:1:1"
     depends_on:
       - zookeeper
-    networks:
-      - kafka-net
 
   producer:
     build:
@@ -32,9 +28,15 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - kafka
-    networks:
-      - kafka-net
 
-networks:
-  kafka-net:
-    driver: bridge
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  pgdata:

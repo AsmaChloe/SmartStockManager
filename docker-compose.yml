@@ -3,11 +3,13 @@ version: '3.8'
 x-airflow-common:
   &airflow-common
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.10.2}
+  env_file:
+    - .env
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${AIRFLOW_USER}:${AIRFLOW_PASSWORD}@postgres/${AIRFLOW_DB}
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${AIRFLOW_USER}:${AIRFLOW_PASSWORD}@postgres/${AIRFLOW_DB}
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
@@ -15,6 +17,9 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    AIRFLOW_CONN_MY_PROD_DB: postgres://${MAIN_USER}:${MAIN_PASSWORD}@postgres:5432/${MAIN_DB}
+    AIRFLOW__CORE__TEST_CONNECTION: Enabled
+    AIRFLOW__CORE__ENABLE_XCOM_PICKLING: 'true'
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
@@ -33,12 +38,15 @@ services:
 
   postgres:
     image: postgres:13
+    env_file:
+      - .env
     environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
+      POSTGRES_USER: ${AIRFLOW_USER}
+      POSTGRES_PASSWORD: ${AIRFLOW_PASSWORD}
+      POSTGRES_DB: ${AIRFLOW_DB}
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
+      - ./init.sh:/docker-entrypoint-initdb.d/init.sh
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 10s

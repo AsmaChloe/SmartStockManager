@@ -1,0 +1,183 @@
+[
+    {
+      "product_name": "Smartphone",
+      "price": 699.99,
+      "category_id": 1,
+      "MinStockThreshold": 50
+    },
+    {
+      "product_name": "Laptop",
+      "price": 1199.99,
+      "category_id": 1,
+      "MinStockThreshold": 30
+    },
+    {
+      "product_name": "Smartwatch",
+      "price": 199.99,
+      "category_id": 1,
+      "MinStockThreshold": 100
+    },
+    {
+      "product_name": "Jeans",
+      "price": 49.99,
+      "category_id": 2,
+      "MinStockThreshold": 200
+    },
+    {
+      "product_name": "T-Shirt",
+      "price": 19.99,
+      "category_id": 2,
+      "MinStockThreshold": 300
+    },
+    {
+      "product_name": "Jacket",
+      "price": 99.99,
+      "category_id": 2,
+      "MinStockThreshold": 50
+    },
+    {
+      "product_name": "Milk",
+      "price": 1.99,
+      "category_id": 3,
+      "MinStockThreshold": 500
+    },
+    {
+      "product_name": "Eggs (Dozen)",
+      "price": 2.99,
+      "category_id": 3,
+      "MinStockThreshold": 400
+    },
+    {
+      "product_name": "Bread",
+      "price": 1.49,
+      "category_id": 3,
+      "MinStockThreshold": 300
+    },
+    {
+      "product_name": "Refrigerator",
+      "price": 899.99,
+      "category_id": 4,
+      "MinStockThreshold": 10
+    },
+    {
+      "product_name": "Microwave",
+      "price": 149.99,
+      "category_id": 4,
+      "MinStockThreshold": 20
+    },
+    {
+      "product_name": "Washing Machine",
+      "price": 799.99,
+      "category_id": 4,
+      "MinStockThreshold": 5
+    },
+    {
+      "product_name": "Fiction Novel",
+      "price": 12.99,
+      "category_id": 5,
+      "MinStockThreshold": 200
+    },
+    {
+      "product_name": "Science Textbook",
+      "price": 59.99,
+      "category_id": 5,
+      "MinStockThreshold": 100
+    },
+    {
+      "product_name": "Cookbook",
+      "price": 24.99,
+      "category_id": 5,
+      "MinStockThreshold": 150
+    },
+    {
+      "product_name": "Action Figure",
+      "price": 14.99,
+      "category_id": 6,
+      "MinStockThreshold": 500
+    },
+    {
+      "product_name": "Puzzle",
+      "price": 9.99,
+      "category_id": 6,
+      "MinStockThreshold": 400
+    },
+    {
+      "product_name": "Board Game",
+      "price": 29.99,
+      "category_id": 6,
+      "MinStockThreshold": 150
+    },
+    {
+      "product_name": "Football",
+      "price": 29.99,
+      "category_id": 7,
+      "MinStockThreshold": 200
+    },
+    {
+      "product_name": "Tennis Racket",
+      "price": 79.99,
+      "category_id": 7,
+      "MinStockThreshold": 50
+    },
+    {
+      "product_name": "Yoga Mat",
+      "price": 19.99,
+      "category_id": 7,
+      "MinStockThreshold": 300
+    },
+    {
+      "product_name": "Shampoo",
+      "price": 8.99,
+      "category_id": 8,
+      "MinStockThreshold": 500
+    },
+    {
+      "product_name": "Face Cream",
+      "price": 15.99,
+      "category_id": 8,
+      "MinStockThreshold": 300
+    },
+    {
+      "product_name": "Lipstick",
+      "price": 9.99,
+      "category_id": 8,
+      "MinStockThreshold": 400
+    },
+    {
+      "product_name": "Car Battery",
+      "price": 89.99,
+      "category_id": 9,
+      "MinStockThreshold": 50
+    },
+    {
+      "product_name": "Tire",
+      "price": 149.99,
+      "category_id": 9,
+      "MinStockThreshold": 100
+    },
+    {
+      "product_name": "Motor Oil (5L)",
+      "price": 34.99,
+      "category_id": 9,
+      "MinStockThreshold": 200
+    },
+    {
+      "product_name": "Dining Table",
+      "price": 299.99,
+      "category_id": 10,
+      "MinStockThreshold": 20
+    },
+    {
+      "product_name": "Sofa",
+      "price": 799.99,
+      "category_id": 10,
+      "MinStockThreshold": 15
+    },
+    {
+      "product_name": "Office Chair",
+      "price": 149.99,
+      "category_id": 10,
+      "MinStockThreshold": 50
+    }
+  ]
+  

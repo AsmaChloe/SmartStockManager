@@ -91,9 +91,7 @@ with DAG(
         python_callable=seed_table,
         op_kwargs={
             "json_path":"/opt/airflow/data/products.json",
-            "table_name": "product",
-            "generate_id": True, 
-            "column_id_name": "product_id"
+            "table_name": "product"
         }
     )
 

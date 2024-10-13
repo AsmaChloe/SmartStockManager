@@ -54,7 +54,7 @@ with DAG(
         task_id='create_category_table',
         postgres_conn_id='my_prod_db',
         sql='''
-        DROP TABLE CATEGORY;
+        DROP TABLE IF EXISTS CATEGORY;
         CREATE TABLE CATEGORY (
             category_id INT PRIMARY KEY,
             category_name VARCHAR(255) NOT NULL
@@ -75,7 +75,7 @@ with DAG(
         task_id='create_product_table',
         postgres_conn_id='my_prod_db',
         sql='''
-        DROP TABLE PRODUCT;
+        DROP TABLE IF EXISTS PRODUCT;
         CREATE TABLE PRODUCT (
             product_id VARCHAR(255) PRIMARY KEY,
             product_name VARCHAR(255) NOT NULL,
